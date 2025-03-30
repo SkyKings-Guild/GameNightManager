@@ -1,0 +1,25 @@
+# For more details on how to configure Wrangler, refer to:
+# https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "skykings-gamenight"
+main = "src/server.js"
+compatibility_date = "2025-03-27"
+
+# Note: Use secrets to store sensitive data.
+# https://developers.cloudflare.com/workers/configuration/secrets/
+
+[env.prod]
+[env.prod.vars]
+GUILD_ID = ""                                # Server ID
+GAME_NIGHT_CATEGORY_ID = ""                  # Category for channels
+STAFF_ROLE_IDS = [""]                        # People who should be able to manage channels
+USER_ROLE_ID = ""                            # Optional game night access role, leave blank for @everyone
+BANNED_ROLE_ID = ""                          # Disallowed from joining game night channels
+LOG_CHANNEL_ID = ""                          # Error logs
+
+[env.prod.observability]
+enabled = true
+
+[[env.prod.kv_namespaces]]
+binding = "KV"
+id = ""                                      # KV id

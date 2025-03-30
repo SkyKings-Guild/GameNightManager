@@ -1,0 +1,22 @@
+{
+	"name": "skykings-gamenight",
+	"version": "1.0.0",
+	"private": true,
+    "type": "module",
+	"scripts": {
+		"deploy": "wrangler deploy --env prod",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+        "ngrok": "ngrok http 8787",
+        "register": "node src/register.js",
+        "secret": "wrangler secret put --env prod"
+	},
+    "dependencies": {
+        "discord-interactions": "^4.0.0"
+    },
+	"devDependencies": {
+		"wrangler": "^4.6.0",
+        "dotenv": "^16.0.3",
+        "ngrok": "^5.0.0-beta.2"
+	}
+}
